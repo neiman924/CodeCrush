@@ -1,0 +1,23 @@
+{
+  "name": "code-crush",
+  "version": "1.0.0",
+  "description": "code-crush",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server --ignore client",
+    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.1",
+    "react-query": "^3.39.2"
+  }
+}
