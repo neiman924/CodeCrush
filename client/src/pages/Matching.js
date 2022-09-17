@@ -34,7 +34,7 @@ const handleFormSubmit = e => {
    e.preventDefault();
 
     if (e.target.value === "like") {
-          var loginuser = Auth.getProfile().data;
+      var loginuser = Auth.getProfile().data;
           var userID = loginuser._id;
           var matchuserID = data.users[randomNum]._id;
           console.log(userID,matchuserID);
@@ -51,8 +51,8 @@ const handleFormSubmit = e => {
 
             alert(e.target.value);
     }else if (e.target.value === "next") {
+      var loginuser = Auth.getProfile().data;
           var matchuserID = data.users[randomNum]._id;
-          var loginuser = Auth.getProfile().data;
           var userID = loginuser._id;
           console.log(userID,matchuserID);
           try {

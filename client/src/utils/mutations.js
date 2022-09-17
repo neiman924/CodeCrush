@@ -54,7 +54,7 @@ export const ADD_COMMENT = gql`
 `;
  
 export const ADD_LIKE = gql`
-  mutation addLike($UserID: String,$UsersLiked: String) {
+  mutation addLike($UserID: String!,$UsersLiked: String!) {
     addLike(UserID: $UserID,UsersLiked: $UsersLiked) {
       _id
       UserID
@@ -64,7 +64,7 @@ export const ADD_LIKE = gql`
 `;
 
 export const ADD_PASS = gql`
-  mutation addPass($UserID: String,$UsersPassed: String) {
+  mutation addPass($UserID: String!,$UsersPassed: String!) {
     addPass(UserID: $UserID,UsersPassed: $UsersPassed) {
       _id
       UserID
@@ -74,7 +74,7 @@ export const ADD_PASS = gql`
 `;
 
 export const ADD_MATCH = gql`
-  mutation addMatch($UserID: String,$Matched: String) {
+  mutation addMatch($UserID: String!,$Matched: String!) {
     addMatch(UserID: $UserID,Matched: $Matched) {
       _id
       UserID

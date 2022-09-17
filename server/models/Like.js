@@ -1,12 +1,12 @@
  const { Schema, model } = require('mongoose');
  
  const UserLikeSchema = new Schema({
-  userid: {
+  UserID: {
      type: String,
      trim: true,
 
    },
-   usersliked: {
+   UsersLiked: {
      type: String,
      trim: true,
    }
@@ -15,4 +15,4 @@
  const Like = model('like', UserLikeSchema);
  
  module.exports = Like;
- 
+  

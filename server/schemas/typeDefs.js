@@ -113,11 +113,11 @@ type User {
 
     login(email: String!, password: String!): Auth
 
-    addLike(UserID: String,UsersLiked: String): Like
+    addLike(UserID: String!,UsersLiked: String!): Like
 
-    addPass(UserID: String,UsersPassed: String): Pass
+    addPass(UserID: String!,UsersPassed: String!): Pass
 
-    addMatch(UserID: String,Matched: String): Match
+    addMatch(UserID: String!,Matched: String!): Match
   }
 `;
 
