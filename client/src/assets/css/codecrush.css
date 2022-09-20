@@ -232,7 +232,7 @@ button:focus {
   outline: 5px auto -webkit-focus-ring-color;
 }
 
-input,
+input,select,
 button,
 select,
 optgroup,
@@ -244,7 +244,7 @@ textarea {
 }
 
 button,
-input {
+input,select {
   overflow: visible;
 }
 

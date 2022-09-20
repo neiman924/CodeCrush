@@ -18,6 +18,21 @@ const userSchema = new Schema({
       unique: true,
       match: [/.+@.+\..+/, 'Must match an email address!'],
     },
+    gender: {
+      type: String,
+      trim: true,
+      required: false,
+    },
+    age: {
+      type: String,
+      trim: true,
+      required: false,
+    },
+    pic: {
+      type: String,
+      trim: true,
+      required: false,
+    },
     likes: [
       {
         type: Schema.Types.ObjectId,

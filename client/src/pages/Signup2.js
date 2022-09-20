@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../assets/css/signup.css';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import { getAge } from '../utils/helpers';
 
 import Auth from '../utils/auth';
 import Navbar from '../components/navbar';
@@ -12,6 +13,9 @@ const Signup = () => {
     name: '',
     email: '',
     password: '',
+    age:'',
+    gender:'',
+    pic:'',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -20,17 +24,32 @@ const Signup = () => {
 
     setFormState({
       ...formState,
-      [name]: value,
+      [name]: value
     });
   };
+  // console.log('test',formState.name,formState.password,formState.email,formState.age,formState.gender,formState.pic);
+  // var dob = new Date(formState.age);  
+  // var dobyear = dob.getUTCFullYear(); 
+  // var year = new Date();
+  // year = year.getFullYear();
+
+
+
+  var userage = getAge(formState.age);
 
   const handleFormSubmit = async (event) => {
     if(!formState.name || !formState.email || !formState.password){
       alert('Failed to submit your comment! please fill all requested fileds.');
       document.location.replace('/');
   }
+
+  if (userage < 18){
+    alert('Sorry, we are not able to submit your request! You are ' + userage + ' old!  you have to be at least 18!');
+    document.location.replace('/signup');
+  }
+
     event.preventDefault();
-    console.log(formState);
+    
 
     try {
       const { data } = await addUser({
@@ -39,7 +58,7 @@ const Signup = () => {
 
       Auth.login(data.addUser.token);
       alert('your profile successfuly created! ');
-      document.location.replace('/');
+      //document.location.replace('/');
     } catch (e) {
       console.error(e);
     }
@@ -64,7 +83,7 @@ const Signup = () => {
                             ) : (
                                     <form onSubmit={handleFormSubmit} id="register" method="post" enctype="multipart/form-data" >
                                     <div className="register__box">
-                                    <label for="user">User<i className="fas fa-asterisk"></i></label>
+                                    <label for="user">User Name<i className="fas fa-asterisk"></i></label>
                                     <input id="name" name='name' value={formState.name} onChange={handleChange} type="text" maxLength="64" required placeholder="Username"/>
                                     </div>
 
@@ -78,32 +97,23 @@ const Signup = () => {
                                     <input id="password" name='password' value={formState.password} onChange={handleChange} type="password" minLength="6" required placeholder="Password"/>
                                     </div>
 
-                                    <div className="register__box conteiner__check">
-                                    <label for="genders">Gender</label>
-                                    <ul className="conteiner__check">
-                                        <li>
-                                        <input id="female" name="gender" type="radio" value="Female"/>
-                                        <label for="female">Female</label>
-                                        </li>
-                                        <li>
-                                        <input id="male" name="gender" type="radio" value="Male"/>
-                                        <label for="male">Male</label>
-                                        </li>
-                                        <li>
-                                        <input id="other" name="gender" type="radio" value="Other"/>
-                                        <label for="other">Other</label>
-                                        </li>
-                                    </ul>
-                                    </div>
+                                      <label className="register__box" for="gender">Gender</label>
+                                        <select value={formState.gender} onChange={handleChange} name="gender" id="gender">
+                                          <option value="">Select</option>
+                                          <option value="femal">Female</option>
+                                          <option value="male">Male</option>
+                                          <option value="other">Other</option>
+                                      </select>
+
 
                                     <div className="register__box">
                                     <label for="age">Age</label>
-                                    <input id="age" type="date" minLength="2"/>
+                                    <input value={formState.age} onChange={handleChange} id="age" name="age" type="date" minLength="2" />
                                     </div>
 
                                     <div className="register__box">
-                                    <label for="image">Choose profile picture</label>
-                                    <input type="file" id="image" name="image" accept="image/*"/>
+                                    <label for="pic">Choose profile picture</label>
+                                    <input value={formState.pic} onChange={handleChange} type="file" id="pic" name="pic" accept="image/*"/>
                                     <div id="preview">
                                         <p>No files currently selected for upload</p>
                                     </div>

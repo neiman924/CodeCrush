@@ -96,7 +96,7 @@ type User {
       work: String
     ): Auth
     
-    addUser(name: String!, email: String!, password: String!,permission: Boolean): Auth
+    addUser(name: String!, email: String!, password: String!,permission: Boolean, age: String, gender: String, pic:String): Auth
       
     updateUser(
       firstName: String
