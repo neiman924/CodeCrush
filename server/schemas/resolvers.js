@@ -4,17 +4,17 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    user: async (parent, { firstName, lastName }) => {
-      return User.findOne({ firstName, lastName });
+    user: async (parent, { _id }) => {
+      return User.findOne({ _id });
+    },
+    singleUser: async (parent, { email }) => {
+      return await User.findOne(email);
     },
     comments: async () => {
       return Comment.find();
     },
     users: async() => {
       return User.find();
-    },
-    user: async (parent, { email }) => {
-      return User.findOne({ email });
     },
     getLikes: async () => {
       return Like.find();
@@ -45,14 +45,18 @@ const resolvers = {
       return { comments };
     },
 
-    updateUser: async (parent, args, context) => {
-      if (context.user) {
-        return User.findByIdAndUpdate(context.user.id, args, {
-          new: true,
-        });
-      }
+    // updateUser: async (parent, args, context) => {
+    //   if (context.user) {
+    //     return User.findByIdAndUpdate(context.user._id, args, {
+    //       new: true,
+    //     });
+    //   }
 
-      throw new AuthenticationError('Not logged in');
+    //   throw new AuthenticationError('Not logged in');
+    // },
+
+    updateUser: async (parent, { id, args }) => {
+      return await Class.findOneAndUpdate({ _id: id }, { args });
     },
 
     login: async (parent, { email, password }) => {

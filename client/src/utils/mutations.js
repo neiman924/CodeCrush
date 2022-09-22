@@ -41,6 +41,18 @@ export const ADD_USER = gql`
   }
 `;
 
+export const UPDATE_USER = gql`
+  mutation updateUser($password: String!, $age: String, $gender:String, $pic:String) {
+    updateUser(password: $password, age: $age, gender: $gender, pic: $pic) {
+      token
+      user {
+        _id
+        name
+      }
+    }
+  }
+`;
+
 //contact us part
 export const ADD_COMMENT = gql`
   mutation addComment($comment: String!,$name: String,$email: String) {

@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProfilePic from '../components/ProfilePic';
+import { getRandomItem } from '../utils/helpers';
 
 import Auth from '../utils/auth';
 import IMAGES from './images';
 
 export default function navbar() {
   var permission = false;
+  var randomImg = getRandomItem(Object.keys(ProfilePic).length);
+  var randomPic = (Object.keys(ProfilePic)[randomImg]);
+
   if (Auth.loggedIn()) {
     permission = Auth.getProfile().data.permission;
   }

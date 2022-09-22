@@ -21,17 +21,14 @@ const userSchema = new Schema({
     gender: {
       type: String,
       trim: true,
-      required: false,
     },
     age: {
       type: String,
       trim: true,
-      required: false,
     },
     pic: {
       type: String,
       trim: true,
-      required: false,
     },
     likes: [
       {

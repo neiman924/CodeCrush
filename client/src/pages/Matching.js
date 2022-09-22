@@ -23,6 +23,7 @@ export default function Matching() {
     
     const { loading, data } = useQuery(QUERY_ALL_USER);
     const allusers = data?.users || [];
+    //console.log(data.users);
     var size = Object.keys(allusers).length;
     var randomNum = getRandomItem(size);
     var randomImg = getRandomItem(Object.keys(ProfilePic).length);

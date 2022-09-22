@@ -4,7 +4,7 @@
     "email": "admin@hotmail.com",
     "password": "password12345",
     "permission": true,
-    "age":"21",
+    "age":"06/02/1987",
     "gender":"male",
     "pic":"profile.jpg"
   },
@@ -12,7 +12,7 @@
     "name": "Brian Kernighan",
     "email": "bkernighan@techfriends.dev",
     "password": "password01",
-    "age":"21",
+    "age":"06/02/1987",
     "gender":"male",
     "pic":"profile.jpg"
   },
@@ -20,7 +20,7 @@
     "name": "Max Kanat-Alexander",
     "email": "mkanatalexander@techfriends.dev",
     "password": "password02",
-    "age":"21",
+    "age":"06/02/1987",
     "gender":"male",
     "pic":"profile.jpg"
   },
@@ -28,7 +28,7 @@
     "name": "Why The Lucky Stiff",
     "email": "wtls@techfriends.dev",
     "password": "password03",
-    "age":"21",
+    "age":"06/02/1987",
     "gender":"male",
     "pic":"profile.jpg"
   },
@@ -36,7 +36,7 @@
     "name": "Kent Beck",
     "email": "kbeck@techfriends.dev",
     "password": "password04",
-    "age":"21",
+    "age":"06/02/1987",
     "gender":"male",
     "pic":"profile.jpg"
   },
@@ -44,7 +44,7 @@
     "name": "Edward V. Berard",
     "email": "evberard@techfriends.dev",
     "password": "password05",
-    "age":"21",
+    "age":"06/02/1987",
     "gender":"male",
     "pic":"profile.jpg"
   },
@@ -52,7 +52,7 @@
     "name": "Alan Kay",
     "email": "akay@techfriends.dev",
     "password": "password06",
-    "age":"21",
+    "age":"06/02/1987",
     "gender":"male",
     "pic":"profile.jpg"
   },
@@ -60,7 +60,7 @@
     "name": "C.A.R. Hoare",
     "email": "choare@techfriends.dev",
     "password": "password07",
-    "age":"21",
+    "age":"06/02/1987",
     "gender":"male",
     "pic":"profile.jpg"
   },
@@ -68,7 +68,7 @@
     "name": "David Thomas",
     "email": "dthomas@techfriends.dev",
     "password": "password08",
-    "age":"21",
+    "age":"06/02/1987",
     "gender":"male",
     "pic":"profile.jpg"
   },
@@ -76,7 +76,7 @@
     "name": "Donald Knuth",
     "email": "dknuth@techfriends.dev",
     "password": "password09",
-    "age":"21",
+    "age":"06/02/1987",
     "gender":"male",
     "pic":"profile.jpg"
   },
@@ -84,7 +84,7 @@
     "name": "Lernantino",
     "email": "lernantino@techfriends.dev",
     "password": "password10",
-    "age":"21",
+    "age":"06/02/1987",
     "gender":"male",
     "pic":"profile.jpg"
   }

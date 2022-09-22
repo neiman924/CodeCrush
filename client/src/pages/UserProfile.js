@@ -65,7 +65,7 @@ console.log(ProfilePic[randomPic],getrandomPic());
                     <div className="uh-right">
                         <div className="user-info">
                         <h3>Welcome {loginuser.name} !</h3>
-                        <a type="submit" className="btn" href='/editprofile'>Edit Profile</a>
+                        <a type="submit" className="btn" href='/editprofile'>Your Profile</a>
                         </div>
                         <div className="user-bio">
                         <p className="user-bio-name">{useraccount}</p><br/>

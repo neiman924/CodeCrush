@@ -8,6 +8,9 @@ type User {
     permission: Boolean
     email: String
     password: String
+    age: String
+    gender: String
+    pic: String
   }
   type Like {
     _id: ID
@@ -76,6 +79,7 @@ type User {
   type Query {
     users: [User]
     user(_id: ID!): User
+    singleUser(_id: ID!): User!
     me: User
     comments: [Comment]
     Likes(UserID: String): [Like]
@@ -98,15 +102,11 @@ type User {
     
     addUser(name: String!, email: String!, password: String!,permission: Boolean, age: String, gender: String, pic:String): Auth
       
-    updateUser(
-      firstName: String
-      lastName: String
-      email: String
+    updateUser(_id: ID!, 
       password: String
-      age: Int
-      location: String
-      looking_for: String
-      work: String
+      age: String
+      gender: String
+      pic: String
     ): Auth
 
     addComment(comment: String,name: String,email:String): Comment
@@ -118,6 +118,8 @@ type User {
     addPass(UserID: String!,UsersPassed: String!): Pass
 
     addMatch(UserID: String!,Matched: String!): Match
+
+    singleUser(id: ID!): User
   }
 `;
 
