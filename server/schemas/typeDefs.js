@@ -83,7 +83,6 @@ type User {
     me: User
     comments: [Comment]
     Likes(UserID: String): [Like]
-    getLikes:[Like]
     Passes(UserID: String): [Pass]
     Matches(UserID: String): [Match]
   }
@@ -120,6 +119,15 @@ type User {
     addMatch(UserID: String!,Matched: String!): Match
 
     singleUser(id: ID!): User
+
+    findLikes(UserID: String!): [Like]
+
+    Likes(UserID: String): [Like]
+
+    Passes(UserID: String): [Pass]
+    
+    Matches(UserID: String): [Match]
+
   }
 `;
 

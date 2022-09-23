@@ -16,17 +16,14 @@ const resolvers = {
     users: async() => {
       return User.find();
     },
-    getLikes: async () => {
-      return Like.find();
+    Likes: async (parent, UserID) => {
+      return Like.find(UserID);
     },
-    Likes: async (parent, {UserID}) => {
-      return Like.findOne(UserID);
+    Matches: async (parent, UserID) => {
+      return Match.find(UserID);
     },
-    Matches: async (parent, {UserID}) => {
-      return Match.findOne(UserID);
-    },
-    Passes: async () => {
-      return Pass.find();
+    Passes: async (parent, UserID) => {
+      return Pass.find(UserID);
     },
   },
 
@@ -91,6 +88,18 @@ const resolvers = {
       const matches = await Match.create({UserID,Matched});
       return { matches };
       },
+    findLikes: async (parent, UserID) => {
+      return await User.find(UserID);
+    },
+    Likes: async (parent, UserID) => {
+      return Like.find(UserID);
+    },
+    Matches: async (parent, UserID) => {
+      return Match.find(UserID);
+    },
+    Passes: async (parent, UserID) => {
+      return Pass.find(UserID);
+    },
     }
 };
 

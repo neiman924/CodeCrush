@@ -111,3 +111,28 @@ export const SINGLE_USER = gql`
     }
   }
 `;
+
+
+export const LIKES = gql`
+  mutation Likes($UserID: String!) {
+    Likes(UserID: $UserID) {
+      UsersLiked
+    }
+  }
+`;
+
+export const PASSES = gql`
+  mutation Passes($UserID: String!) {
+    Passes(UserID: $UserID) {
+      UsersPassed
+    }
+  }
+`;
+
+export const MATCHES = gql`
+  mutation Matches($UserID: String!) {
+    Matches(UserID: $UserID) {
+      Matched
+    }
+  }
+`;

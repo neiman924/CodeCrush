@@ -71,18 +71,27 @@ export const SINGLE_USER = gql`
     }
   }
 `;
-export const QUERY_LIKE = gql`
-  query likes($UserID: String!) {
-    likes(UserID: $UserID) {
+
+export const LIKES = gql`
+  query Likes($UserID: String!) {
+    Likes(UserID: $UserID) {
       UsersLiked
     }
   }
 `;
-export const QUERY_LIKES = gql`
-  query getLikes {
-    getLikes{
-      UserID
-      UsersLiked
+
+export const PASSES = gql`
+  query Passes($UserID: String!) {
+    Passes(UserID: $UserID) {
+      UsersPassed
+    }
+  }
+`;
+
+export const MATCHES = gql`
+  query Matches($UserID: String!) {
+    Matches(UserID: $UserID) {
+      Matched
     }
   }
 `;
